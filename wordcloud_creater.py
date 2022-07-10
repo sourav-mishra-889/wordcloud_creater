@@ -156,7 +156,7 @@ def calculate_frequencies(file_contents):
 
     # adding mask to word cloud
     mask = masks.get()+'-mask.png'
-    Path = os.path.realpath('word-cloud-masks/'+mask)
+    Path = os.path.realpath(mask)
     my_mask = np.array(Image.open(Path))
     
     wordcloud = WordCloud(mask=my_mask, colormap=font_color.get().strip()+"_r", background_color=Background_color.get().lower().strip()).generate(file_contents)
